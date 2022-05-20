@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="749.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gymtopia.Loading">
+   <children>
+      <Label alignment="CENTER" layoutX="202.0" layoutY="-24.0" prefHeight="133.0" prefWidth="288.0" text="GYMTOPIA" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="477.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="201.0" AnchorPane.topAnchor="-24.0">
+         <font>
+            <Font name="Wingdings" size="59.0" />
+         </font>
+      </Label>
+      <StackPane layoutX="78.0" layoutY="97.0" prefHeight="452.0" prefWidth="593.0">
+         <children>
+            <Circle fx:id="c1" fill="TRANSPARENT" radius="226.0" stroke="#b4576c" strokeType="INSIDE" strokeWidth="8.0" style="-fx-stroke-dash-array: 70;">
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Circle>
+            <Circle fx:id="c2" fill="#1f93ff00" radius="171.0" stroke="#515151" strokeType="INSIDE" strokeWidth="7.0" style="-fx-stroke-dash-array: 50;">
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Circle>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/fitness%20(2).png" />
+               </image>
+            </ImageView>
+            <Circle fx:id="c3" fill="#1f93ff00" radius="114.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="7.0" style="-fx-stroke-dash-array: 40;">
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </Circle>
+         </children>
+         <effect>
+            <Glow />
+         </effect>
+      </StackPane>
+   </children>
+</AnchorPane>
