@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="749.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gymtopia.Loading">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="749.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gymtopia.Loading">
    <children>
       <Label alignment="CENTER" layoutX="202.0" layoutY="-28.0" prefHeight="133.0" prefWidth="288.0" text="GYMTOPIA" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="481.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="201.0" AnchorPane.topAnchor="-28.0">
          <font>
