@@ -29,7 +29,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         stg= stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Member.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Coach.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stg.initStyle(StageStyle.UNDECORATED);
         stg.setScene(scene);
