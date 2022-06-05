@@ -18,8 +18,6 @@ public class MemberController implements Initializable, Utility {
     @FXML
     private TableView<Members> table;
     @FXML
-    private Button addbtn;
-    @FXML
     private TextField nametf;
     @FXML
     private TextField phonetf;
@@ -180,7 +178,7 @@ public class MemberController implements Initializable, Utility {
     }
 
     @FXML
-    public void clean(){
+    private void clean(){
         nametf.setText(null);
         weighttf.setText(null);
         phonetf.setText(null);
