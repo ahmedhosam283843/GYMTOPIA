@@ -35,6 +35,7 @@ public class Loading implements Initializable {
 
     int rotate =0;
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Admin.getInstance("admin", "admin");
         setRotate(c1, 10, true, 360);
         setRotate2(c2, 18, true, 180);
         setRotate2(c3, 24, true, 145);

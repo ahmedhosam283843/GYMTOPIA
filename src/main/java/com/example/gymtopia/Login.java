@@ -1,12 +1,14 @@
 package com.example.gymtopia;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Objects;
 
 
 public class Login {
@@ -26,7 +28,14 @@ public class Login {
 
     public void MemberBtnOnAction(ActionEvent e) throws IOException {
         if(UsernameTextField.getText().isBlank()==false && PasswordTextField.getText().isBlank()==false){
-            validateLogin();
+            Admin admin = Admin.getInstance("admin", "admin");
+            boolean flag = (Objects.equals(UsernameTextField.getText(), admin.username))&& (Objects.equals(admin.password, PasswordTextField.getText()));
+            if(flag){
+                HelloApplication.isAdmin = true;
+                HelloApplication.setScene((new FXMLLoader(getClass().getResource("Member.fxml"))).load());
+                HelloApplication.UpdateStage();
+            }
+            else validateLogin();
 
         }
         else{
@@ -40,14 +49,16 @@ public class Login {
     public void validateLogin(){
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connection = connectNow.getConnection();
-        String verifyLogin  = "select Count(1) from members Where MUsername='"+ UsernameTextField.getText()+ "' AND MPassword = '"
+        String verifyLogin  = "select Count(1) from trainers Where TUsername='"+ UsernameTextField.getText()+ "' AND TPassword = '"
                 +PasswordTextField.getText()+"'";
         try{
             Statement statement = connection.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
             while (queryResult.next()){
                 if (queryResult.getInt(1)==1){
-                    LoginText.setText("Welcome");
+                    HelloApplication.setScene((new FXMLLoader(getClass().getResource("Member.fxml"))).load());
+                    HelloApplication.UpdateStage();
+                    HelloApplication.isAdmin = false;
                 }
                 else{
                     Alert al = new Alert(Alert.AlertType.ERROR);

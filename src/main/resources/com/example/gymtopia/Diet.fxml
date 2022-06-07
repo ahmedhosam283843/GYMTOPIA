@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="685.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gymtopia.DietController">
+<AnchorPane prefHeight="685.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gymtopia.DietController">
     <children>
         <VBox layoutY="91.0" prefHeight="606.0" prefWidth="167.0" spacing="65.0" style="-fx-background-color: black; -fx-padding: 30 20 20 20;">
             <children>
-                <AnchorPane prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
+                <AnchorPane onMouseClicked="#switchtoMember" prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
                     <children>
                         <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -43,7 +43,7 @@
                         </Label>
                     </children>
                 </AnchorPane>
-                <AnchorPane prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
+                <AnchorPane onMouseClicked="#switchtoSession" prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
                     <children>
                         <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -57,7 +57,7 @@
                         </Label>
                     </children>
                 </AnchorPane>
-                <AnchorPane prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
+                <AnchorPane onMouseClicked="#switchtoCoach" prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
                     <children>
                         <Label layoutX="68.0" layoutY="11.0" prefHeight="28.0" prefWidth="98.0" text="Coaches" textFill="WHITE">
                             <font>
@@ -71,7 +71,7 @@
                         </ImageView>
                     </children>
                 </AnchorPane>
-                <AnchorPane prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
+                <AnchorPane onMouseClicked="#switchtoDashboard" prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
                     <children>
                         <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -85,7 +85,7 @@
                         </Label>
                     </children>
                 </AnchorPane>
-                <AnchorPane prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
+                <AnchorPane onMouseClicked="#switchtoLogout" prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
                     <children>
                         <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                             <image>

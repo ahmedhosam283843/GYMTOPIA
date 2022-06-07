@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="512.0" prefWidth="416.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gymtopia.Login">
+<AnchorPane prefHeight="512.0" prefWidth="416.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gymtopia.Login">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="133.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -27,21 +27,11 @@
          </font>
       </Label>
       <TextField fx:id="UsernameTextField" layoutX="180.0" layoutY="213.0" opacity="0.84" prefHeight="26.0" prefWidth="183.0" promptText="Username" />
-      <Button fx:id="MemberBtn" layoutX="67.0" layoutY="396.0" mnemonicParsing="false" onAction="#MemberBtnOnAction" prefHeight="26.0" prefWidth="127.0" style="-fx-background-color: #ff91a4;" text="Member " textFill="WHITE">
+      <Button fx:id="MemberBtn" layoutX="144.0" layoutY="397.0" mnemonicParsing="false" onAction="#MemberBtnOnAction" prefHeight="26.0" prefWidth="127.0" style="-fx-background-color: #ff91a4;" text="Login" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="TrainerBtn" layoutX="220.0" layoutY="396.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="127.0" style="-fx-background-color: #ff91a4;" text="Trainer" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Label fx:id="admin" layoutX="189.0" layoutY="453.0" prefHeight="17.0" prefWidth="38.0" text="admin" textFill="WHITE">
-         <font>
-            <Font name="Franklin Gothic Medium Italic" size="13.0" />
-         </font>
-      </Label>
       <Label fx:id="LoginText" layoutX="163.0" layoutY="175.0" prefHeight="27.0" prefWidth="90.0" textFill="WHITE">
          <font>
             <Font name="Gadugi Bold" size="18.0" />

@@ -12,46 +12,46 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="685.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gymtopia.CoachController">
+<AnchorPane prefHeight="685.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gymtopia.CoachController">
     <children>
         <VBox layoutY="91.0" prefHeight="606.0" prefWidth="167.0" spacing="65.0" style="-fx-background-color: black; -fx-padding: 30 20 20 20;">
             <children>
-                <AnchorPane prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
+                <AnchorPane onMouseClicked="#switchtoMember" prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
                     <children>
-                        <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" onMouseClicked="#switchtoMember" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@images/id-card.png" />
                             </image>
                         </ImageView>
-                        <Label layoutX="68.0" layoutY="11.0" prefHeight="28.0" prefWidth="98.0" text="Members" textFill="WHITE">
+                        <Label layoutX="68.0" layoutY="11.0" onMouseClicked="#switchtoMember" prefHeight="28.0" prefWidth="98.0" text="Members" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="19.0" />
                             </font>
                         </Label>
                     </children>
                 </AnchorPane>
-            <AnchorPane prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
+            <AnchorPane onMouseClicked="#switchtoDiet" prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
                <children>
-                  <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" onMouseClicked="#switchtoDiet" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/diet.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="68.0" layoutY="11.0" prefHeight="28.0" prefWidth="98.0" text="Diet" textFill="WHITE">
+                  <Label layoutX="68.0" layoutY="11.0" onMouseClicked="#switchtoDiet" prefHeight="28.0" prefWidth="98.0" text="Diet" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="19.0" />
                      </font>
                   </Label>
                </children>
             </AnchorPane>
-                <AnchorPane prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
+                <AnchorPane onMouseClicked="#switchtoSession" prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
                     <children>
-                        <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" onMouseClicked="#switchtoSession" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@images/stopwatch.png" />
                             </image>
                         </ImageView>
-                        <Label layoutX="68.0" layoutY="11.0" prefHeight="28.0" prefWidth="98.0" text="Sessions" textFill="WHITE">
+                        <Label layoutX="68.0" layoutY="11.0" onMouseClicked="#switchtoSession" prefHeight="28.0" prefWidth="98.0" text="Sessions" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="19.0" />
                             </font>
@@ -65,14 +65,14 @@
                                 <Font name="System Bold" size="19.0" />
                             </font>
                         </Label>
-                        <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@images/referee%20(2).png" />
                             </image>
                         </ImageView>
                     </children>
                 </AnchorPane>
-                <AnchorPane prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
+                <AnchorPane onMouseClicked="#switchtoDashboard" prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
                     <children>
                         <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -86,7 +86,7 @@
                         </Label>
                     </children>
                 </AnchorPane>
-                <AnchorPane prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
+                <AnchorPane onMouseClicked="#switchtoLogout" prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
                     <children>
                         <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                             <image>

@@ -31,14 +31,14 @@ public class Membership implements Utility {
         long diff = ExpiryDate.getTime() - (new Date()).getTime();
         float days = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
         if(session.getName()=="gymnastics")
-            return days*10;
+            return Math.max(0, days*10);
         else if (session.getName()=="zomba")
-            return days*15;
+            return Math.max(0,days*15);
         else if(session.getName()=="Kick boxing")
-            return days*12;
+            return Math.max(0,days*12);
         else if(session.getName()=="Karate")
-            return days*8;
-        else return days*5;
+            return Math.max(0,days*8);
+        else return Math.max(0,days*5);
 
     }
     @Override

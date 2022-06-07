@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="685.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gymtopia.DietController">
+<AnchorPane prefHeight="685.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gymtopia.DashboardController">
     <children>
         <VBox layoutY="91.0" prefHeight="606.0" prefWidth="167.0" spacing="65.0" style="-fx-background-color: black; -fx-padding: 30 20 20 20;">
             <children>
@@ -29,7 +29,7 @@
                         </Label>
                     </children>
                 </AnchorPane>
-                <AnchorPane prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: #3f3f3f;">
+                <AnchorPane onMouseClicked="#switchtoDiet" prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
                     <children>
                         <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -43,14 +43,14 @@
                         </Label>
                     </children>
                 </AnchorPane>
-                <AnchorPane onMouseClicked="#switchtoSession" prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
+                <AnchorPane prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
                     <children>
                         <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@images/stopwatch.png" />
                             </image>
                         </ImageView>
-                        <Label layoutX="68.0" layoutY="11.0" prefHeight="28.0" prefWidth="98.0" text="Sessions" textFill="WHITE">
+                        <Label layoutX="68.0" layoutY="11.0" onMouseClicked="#switchtoSession" prefHeight="28.0" prefWidth="98.0" text="Sessions" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="19.0" />
                             </font>
@@ -71,7 +71,7 @@
                         </ImageView>
                     </children>
                 </AnchorPane>
-                <AnchorPane onMouseClicked="#switchtoDashboard" prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: black;">
+                <AnchorPane prefHeight="50.0" prefWidth="172.0" style="-fx-background-color: #3f3f3f;">
                     <children>
                         <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -123,105 +123,92 @@
                 <Font name="System Bold" size="21.0" />
             </font>
         </Label>
-        <Label layoutX="589.0" layoutY="26.0" text="Diet Calculator" textFill="#ff5e7e">
+        <Label layoutX="592.0" layoutY="28.0" text="Gym Statistics" textFill="#ff5e7e">
             <font>
                 <Font name="System Italic" size="15.0" />
             </font>
         </Label>
-        <TextField fx:id="weighttf" layoutX="299.0" layoutY="86.0" promptText="Weight" />
-        <Button fx:id="addbtn" layoutX="565.0" layoutY="216.0" mnemonicParsing="false" onAction="#btnOnAction" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #ff5e7e;" text="Calculate" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="13.0" />
-            </font>
-        </Button>
-        <ChoiceBox fx:id="activityCombo" layoutX="741.0" layoutY="154.0" prefHeight="26.0" prefWidth="150.0" />
-        <Label layoutX="742.0" layoutY="132.0" text="Physical Activity" textFill="#ff5e7e">
-            <font>
-                <Font size="15.0" />
-            </font>
-        </Label>
-      <TextField fx:id="heighttf" layoutX="566.0" layoutY="86.0" promptText="Height" />
-      <TextField fx:id="agetf" layoutX="828.0" layoutY="86.0" promptText="Age" />
-      <ChoiceBox fx:id="genderCombo" layoutX="384.0" layoutY="153.0" prefHeight="26.0" prefWidth="150.0" />
-      <Label layoutX="384.0" layoutY="131.0" text="Gender" textFill="#ff5e7e">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <AnchorPane layoutX="327.0" layoutY="320.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #ff5e7e;">
+        <AnchorPane layoutX="352.0" layoutY="90.0" prefHeight="115.0" prefWidth="178.0" style="-fx-background-color: #ff5e7e;">
+            <children>
+                <Label layoutX="24.0" layoutY="8.0" text="Members" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="17.0" />
+                    </font>
+                </Label>
+                <Label fx:id="memberLbl" layoutX="61.0" layoutY="58.0" text="Member" textFill="WHITE">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="112.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/id-card.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+      <BarChart fx:id="bar" layoutX="259.0" layoutY="371.0" prefHeight="352.0" prefWidth="758.0" stylesheets="@style.css" title="Most Successful Classes">
+        <xAxis>
+          <CategoryAxis label="Classes" side="BOTTOM" fx:id="xAxis">
+               <tickLabelFont>
+                  <Font name="System Bold" size="8.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis" label="Members" minorTickVisible="false" side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <AnchorPane layoutX="745.0" layoutY="231.0" prefHeight="115.0" prefWidth="178.0" style="-fx-background-color: #ff5e7e;">
          <children>
-            <Label layoutX="47.0" layoutY="12.0" text="Calories" textFill="WHITE">
+            <Label layoutX="30.0" layoutY="8.0" text="Coaches" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <Label fx:id="calorieLbl" layoutX="77.0" layoutY="75.0" text="KCal" textFill="WHITE">
+            <Label fx:id="coachLbl" layoutX="68.0" layoutY="66.0" text="Coach" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="17.0" />
+                  <Font size="15.0" />
                </font>
             </Label>
-            <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="123.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="106.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/fire.png" />
+                  <Image url="@images/referee%20(2).png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="751.0" layoutY="320.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #ff5e7e;">
+      <AnchorPane layoutX="745.0" layoutY="90.0" prefHeight="115.0" prefWidth="178.0" style="-fx-background-color: #ff5e7e;">
          <children>
-            <Label layoutX="42.0" layoutY="10.0" text="Protein" textFill="WHITE">
+            <Label layoutX="30.0" layoutY="8.0" text="Sessions" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <Label fx:id="proteinLbl" layoutX="88.0" layoutY="75.0" text="gm" textFill="WHITE">
+            <Label fx:id="sessionLbl" layoutX="64.0" layoutY="58.0" text="Session" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="17.0" />
+                  <Font size="15.0" />
                </font>
             </Label>
-            <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="119.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="106.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/protein.png" />
+                  <Image url="@images/stopwatch.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="325.0" layoutY="540.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #ff5e7e;">
+      <AnchorPane layoutX="352.0" layoutY="231.0" prefHeight="115.0" prefWidth="178.0" style="-fx-background-color: #ff5e7e;">
          <children>
-            <Label layoutX="48.0" layoutY="13.0" text="Carbs" textFill="WHITE">
+            <Label layoutX="6.0" layoutY="14.0" prefHeight="26.0" prefWidth="166.0" text="Expired Membership" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <Label fx:id="carbsLbl" layoutX="88.0" layoutY="75.0" text="gm" textFill="WHITE">
+            <Label fx:id="membershipLbl" layoutX="47.0" layoutY="63.0" text="Membership" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="17.0" />
+                  <Font size="15.0" />
                </font>
             </Label>
-            <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="116.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/bread.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="749.0" layoutY="540.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #ff5e7e;">
-         <children>
-            <Label layoutX="57.0" layoutY="10.0" text="Fats" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="17.0" />
-               </font>
-            </Label>
-            <Label fx:id="fatsLbl" layoutX="88.0" layoutY="75.0" text="gm" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="17.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="31.0" fitWidth="32.0" layoutX="115.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/trans-fat.png" />
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
     </children>

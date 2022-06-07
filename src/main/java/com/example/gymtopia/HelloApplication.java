@@ -17,6 +17,7 @@ import java.util.Timer;
 public class HelloApplication extends Application {
     private static Scene scene;
     private static  Stage stg;
+    public static Boolean isAdmin = false;
     public static void setScene(Parent p) {
         scene = new Scene(p);
     }
@@ -29,7 +30,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         stg= stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Diet.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Loading.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stg.initStyle(StageStyle.UNDECORATED);
         stg.setScene(scene);

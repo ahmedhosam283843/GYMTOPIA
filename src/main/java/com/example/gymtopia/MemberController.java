@@ -3,9 +3,12 @@ package com.example.gymtopia;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.text.SimpleDateFormat;
@@ -278,6 +281,70 @@ public class MemberController implements Initializable, Utility {
             coachcombo.setValue(member.getTrainerName());
             classcombo.setValue(member.getSessionName());
             datepicker.setValue(LocalDate.parse( new SimpleDateFormat("yyyy-MM-dd").format(member.getExpiry()) ));
+        }
+    }
+    @FXML
+    private void switchtoMember(){
+        try {
+            HelloApplication.setScene((new FXMLLoader(getClass().getResource("Member.fxml"))).load());
+            HelloApplication.UpdateStage();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void switchtoDiet(){
+        try {
+            HelloApplication.setScene((new FXMLLoader(getClass().getResource("Diet.fxml"))).load());
+            HelloApplication.UpdateStage();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void switchtoSession(){
+        try {
+            HelloApplication.setScene((new FXMLLoader(getClass().getResource("Session.fxml"))).load());
+            HelloApplication.UpdateStage();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void switchtoCoach(){
+        try {
+            if(HelloApplication.isAdmin){
+                HelloApplication.setScene((new FXMLLoader(getClass().getResource("Coach.fxml"))).load());
+                HelloApplication.UpdateStage();
+            }
+            else {
+                Alert al = new Alert(Alert.AlertType.ERROR);
+
+                al.setContentText("Access Not Granted");
+                al.showAndWait();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void switchtoDashboard(){
+        try {
+            HelloApplication.setScene((new FXMLLoader(getClass().getResource("Dashboard.fxml"))).load());
+            HelloApplication.UpdateStage();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void switchtoLogout(){
+        try {
+            HelloApplication.setScene((new FXMLLoader(getClass().getResource("Login.fxml"))).load());
+            HelloApplication.UpdateStage();
+            HelloApplication.isAdmin = false;
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
